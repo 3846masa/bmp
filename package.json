@@ -5,7 +5,7 @@
   "author": "3846masa <3846masahiro+git@gmail.com>",
   "homepage": "https://github.com/3846masa/bmp#readme",
   "repository": "git+ssh://git@github.com/3846masa/bmp.git",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/convert.cjs",
   "module": "lib/covert.mjs",
   "files": [

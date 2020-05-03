@@ -15,7 +15,7 @@ Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.
   - [CDN](#cdn)
   - [Using via bundler](#using-via-bundler)
 - [API](#api)
-  - [`convert({ width, height, data })`](#convert-width-height-data)
+  - [`convert({ width, height, data })`](#convert-width-height-data-)
   - [`HTMLCanvasElement.prototype.toBlob(callback, type)`](#htmlcanvaselementprototypetoblobcallback-type)
 - [Contributing](#contributing)
 - [License](#license)

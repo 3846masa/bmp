@@ -72,7 +72,7 @@ Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.
 
 #### No module
 
-![no-module](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/polyfill.mjs)
+![no-module](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/polyfill.js)
 
 ```html
 <script src="https://unpkg.com/@3846masa/bmp/lib/polyfill.js"></script>
@@ -92,7 +92,7 @@ Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.
 
 ### Using via bundler
 
-![bundlephobia](https://flat.badgen.net/bundlephobia/min/@3846masa/bmp)
+![bundlephobia](https://flat.badgen.net/bundlephobia/minzip/@3846masa/bmp?label=gzip%20size)
 
 ```sh
 npm i @3846masa/bmp

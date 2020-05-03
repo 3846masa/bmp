@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "@3846masa/bmp~canvas-to-blob",
+  "scripts": {
+    "start": "serve -l 8000"
+  },
+  "devDependencies": {
+    "serve": "^11.3.0"
+  }
+}

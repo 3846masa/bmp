@@ -6,7 +6,7 @@
 Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.
 
 - faster than other libraries (e.g. bmp-js)
-- tiny size (~ 500 bytes)
+- tiny size (basic: ~ 500 bytes, webworker: ~ 700 bytes)
 - supports alpha channel
 
 ## Table of Contents
@@ -27,43 +27,53 @@ Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.
 #### Basic
 
 ![basic](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/convert.mjs)
+[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/master/examples/basic)
+
+See [./examples/basic](./examples/basic).
 
 ```html
 <script type="module">
   import { convert } from 'https://unpkg.com/@3846masa/bmp/lib/convert.mjs';
 
-  const canvas = document.getElementById('#canvas');
-  const ctx = canvas.getContext('2d');
-  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const canvas = document.getElementById('canvas');
+  const bmpImg = document.getElementById('bmp');
 
-  const uint8 = convert(imageData);
-  const blob = new Blob([uint8], { type: 'image/bmp' });
+  function main() {
+    const ctx = canvas.getContext('2d');
 
-  const img = new Image();
-  img.src = URL.createObjectURL(blob);
-  document.body.appendChild(img);
+    const raw = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const bmpBinary = convert(raw);
+    const blob = new Blob([bmpBinary], { type: 'image/bmp' });
+
+    bmpImg.src = URL.createObjectURL(blob);
+  }
+
+  main();
 </script>
 ```
 
 #### WebWorker
 
 ![webworker](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/worker.mjs)
+[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/master/examples/webworker)
+
+See [./examples/webworker](./examples/webworker).
 
 ```html
 <script type="module">
   import { convert } from 'https://unpkg.com/@3846masa/bmp/lib/worker.mjs';
 
+  const canvas = document.getElementById('canvas');
+  const bmpImg = document.getElementById('bmp');
+
   async function main() {
-    const canvas = document.getElementById('#canvas');
     const ctx = canvas.getContext('2d');
-    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
-    const uint8 = await convert(imageData);
-    const blob = new Blob([uint8], { type: 'image/bmp' });
+    const raw = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const bmpBinary = await convert(raw);
+    const blob = new Blob([bmpBinary], { type: 'image/bmp' });
 
-    const img = new Image();
-    img.src = URL.createObjectURL(blob);
-    document.body.appendChild(img);
+    bmpImg.src = URL.createObjectURL(blob);
   }
 
   main().catch(console.error);
@@ -73,20 +83,28 @@ Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.
 #### No module
 
 ![no-module](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/polyfill.js)
+[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/master/examples/canvas-to-blob)
+
+See [./examples/canvas-to-blob](./examples/canvas-to-blob).
 
 ```html
 <script src="https://unpkg.com/@3846masa/bmp/lib/polyfill.js"></script>
 <script>
-  async function main() {
-    const canvas = document.getElementById('#canvas');
-    const blob = new Promise((resolve) => canvas.toBlob(resolve, 'image/bmp'));
+  const canvas = document.getElementById('canvas');
+  const bmpImg = document.getElementById('bmp');
 
-    const img = new Image();
-    img.src = URL.createObjectURL(blob);
-    document.body.appendChild(img);
+  function main() {
+    canvas.toBlob(callback, 'image/bmp');
+
+    function callback(blob) {
+      const blobUrl = URL.createObjectURL(blob);
+      bmpImg.addEventListener('load', () => URL.revokeObjectURL(blobUrl), { once: true });
+      bmpImg.addEventListener('error', () => URL.revokeObjectURL(blobUrl), { once: true });
+      bmpImg.src = blobUrl;
+    }
   }
 
-  main().catch(console.error);
+  main();
 </script>
 ```
 
@@ -136,3 +154,4 @@ PRs accepted.
 [npm]: https://www.npmjs.com/package/@3846masa/bmp
 [mit-license-badge]: https://flat.badgen.net/badge/license/MIT/blue
 [mit-license]: https://3846masa.mit-license.org
+[codesandbox-badge]: https://flat.badgen.net/badge/codesandbox/try%20it/black

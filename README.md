@@ -97,10 +97,7 @@ See [./examples/canvas-to-blob](./examples/canvas-to-blob).
     canvas.toBlob(callback, 'image/bmp');
 
     function callback(blob) {
-      const blobUrl = URL.createObjectURL(blob);
-      bmpImg.addEventListener('load', () => URL.revokeObjectURL(blobUrl), { once: true });
-      bmpImg.addEventListener('error', () => URL.revokeObjectURL(blobUrl), { once: true });
-      bmpImg.src = blobUrl;
+      bmpImg.src = URL.createObjectURL(blob);
     }
   }
 

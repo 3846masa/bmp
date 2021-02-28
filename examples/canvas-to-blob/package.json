@@ -5,6 +5,6 @@
     "start": "serve -l 8000"
   },
   "devDependencies": {
-    "serve": "^11.3.0"
+    "serve": "*"
   }
 }

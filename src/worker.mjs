@@ -11,13 +11,22 @@ const workerScript = () => {
   const BMP_RED_BITFIELDS_OFFSET = 54;
   const BMP_GREEN_BITFIELDS_OFFSET = 62;
 
-  const IS_WIN = /Trident|Edge/.test(navigator.userAgent);
+  const IS_WIN = 'navigator' in globalThis && /Trident|Edge/.test(navigator.userAgent);
+
+  /**
+   * @typedef Options
+   * @type {Object}
+   * @property {boolean} strict
+   */
 
   /**
    * @param {ImageData} imageData
+   * @param {Options} [options]
    * @returns {Uint8Array}
    */
-  const convert = ({ width, height, data }) => {
+  const convert = ({ width, height, data }, _options) => {
+    const options = Object.assign({ strict: false }, _options);
+
     const dataLength = data.byteLength;
     const fileSize = BMP_HEADER_LENGTH + dataLength;
 
@@ -32,7 +41,7 @@ const workerScript = () => {
     setUint32(BMP_IMAGESIZE_OFFSET, dataLength);
 
     uint8Array.set(data, BMP_HEADER_LENGTH);
-    if (IS_WIN) {
+    if (options.strict || IS_WIN) {
       // RGBA -> BGRA
       setUint32(BMP_RED_BITFIELDS_OFFSET, 0x00ff0000);
       setUint32(BMP_GREEN_BITFIELDS_OFFSET, 0x000000ff);
@@ -45,9 +54,9 @@ const workerScript = () => {
     return uint8Array;
   };
 
-  onmessage = ({ data: [key, width, height, buffer] }) => {
+  onmessage = ({ data: [key, width, height, buffer, options] }) => {
     try {
-      const result = convert({ width, height, data: new Uint8Array(buffer) });
+      const result = convert({ width, height, data: new Uint8Array(buffer) }, options);
       postMessage([key, result.buffer], [result.buffer]);
     } catch (err) {
       postMessage([key, undefined, err]);
@@ -72,14 +81,21 @@ worker.onmessage = ({ data: [key, arrayBuffer, errObj] }) => {
 };
 
 /**
+ * @typedef Options
+ * @type {Object}
+ * @property {boolean} strict
+ */
+
+/**
  * @param {ImageData} imageData
+ * @param {Options} [options]
  * @returns {Promise<Uint8Array>}
  */
-const convert = ({ width, height, data }) => {
+const convert = ({ width, height, data }, options) => {
   return new Promise((resolve, reject) => {
     const key = '' + Date.now() + Math.random();
     callbackStore.set(key, [resolve, reject]);
-    worker.postMessage([key, width, height, data.buffer], [data.buffer]);
+    worker.postMessage([key, width, height, data.buffer, options], [data.buffer]);
   });
 };
 

@@ -121,18 +121,19 @@ import { convert } from '@3846masa/bmp';
 
 ## API
 
-### `convert({ width, height, data })`
+### `convert({ width, height, data }, options?)`
 
 Convert RGBA raw bytes like ImageData to a BMP binary.
 
 In `worker.mjs`, this function returns Promise.
 
-|          |                                       |
-| :------- | :------------------------------------ |
-| `width`  | `number`                              |
-| `height` | `number`                              |
-| `data`   | `Uint8Array` \| `Uint8ClampedArray`   |
-| Returns  | `Uint8Array` \| `Promise<Uint8Array>` |
+|                  |                                       |
+| :--------------- | :------------------------------------ |
+| `width`          | `number`                              |
+| `height`         | `number`                              |
+| `data`           | `Uint8Array` \| `Uint8ClampedArray`   |
+| `options.strict` | `boolean`                             |
+| Returns          | `Uint8Array` \| `Promise<Uint8Array>` |
 
 ### `HTMLCanvasElement.prototype.toBlob(callback, type)`
 

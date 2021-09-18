@@ -29,7 +29,7 @@ Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.
 #### Basic
 
 ![basic](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/convert.mjs)
-[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/master/examples/basic)
+[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/main/examples/basic)
 
 See [./examples/basic](./examples/basic).
 
@@ -57,7 +57,7 @@ See [./examples/basic](./examples/basic).
 #### WebWorker
 
 ![webworker](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/worker.mjs)
-[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/master/examples/webworker)
+[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/main/examples/webworker)
 
 See [./examples/webworker](./examples/webworker).
 
@@ -85,7 +85,7 @@ See [./examples/webworker](./examples/webworker).
 #### No module
 
 ![no-module](https://flat.badgen.net/badgesize/gzip/https/unpkg.com/@3846masa/bmp/lib/polyfill.js)
-[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/master/examples/canvas-to-blob)
+[![codesandbox-badge]](https://codesandbox.io/s/github/3846masa/bmp/tree/main/examples/canvas-to-blob)
 
 See [./examples/canvas-to-blob](./examples/canvas-to-blob).
 

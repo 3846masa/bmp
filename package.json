@@ -19,16 +19,19 @@
     "src"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "size-limit": "size-limit"
   },
   "types": "src/convert.d.ts",
   "dependencies": {},
   "devDependencies": {
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.1",
+    "@size-limit/file": "^5.0.3",
     "rollup": "2.40.0",
     "rollup-plugin-terser": "7.0.2",
-    "semantic-release": "17.4.7"
+    "semantic-release": "17.4.7",
+    "size-limit": "^5.0.3"
   },
   "keywords": [
     "bmp",
@@ -37,5 +40,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "esnext": "src/convert.mjs"
+  "esnext": "src/convert.mjs",
+  "size-limit": [
+    {
+      "path": "lib/convert.cjs",
+      "limit": "500 B"
+    },
+    {
+      "path": "lib/convert.mjs",
+      "limit": "500 B"
+    },
+    {
+      "path": "lib/worker.mjs",
+      "limit": "700 B"
+    }
+  ]
 }

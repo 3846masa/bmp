@@ -1,11 +1,17 @@
 {
   "name": "@3846masa/bmp",
+  "version": "1.0.1",
   "description": "Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.",
   "license": "MIT",
   "author": "3846masa <3846masahiro+git@gmail.com>",
   "homepage": "https://github.com/3846masa/bmp#readme",
-  "repository": "git+ssh://git@github.com/3846masa/bmp.git",
-  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/3846masa/bmp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/3846masa/bmp/issues"
+  },
   "main": "lib/convert.cjs",
   "module": "lib/covert.mjs",
   "files": [
@@ -18,12 +24,18 @@
   "types": "src/convert.d.ts",
   "dependencies": {},
   "devDependencies": {
-    "rollup": "^2.40.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.1",
+    "rollup": "2.40.0",
+    "rollup-plugin-terser": "7.0.2",
+    "semantic-release": "17.4.7"
   },
   "keywords": [
     "bmp",
     "imagedata"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "esnext": "src/convert.mjs"
 }

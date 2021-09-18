@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "timezone": "Asia/Tokyo",
+  "schedule": ["after 8:00 pm"],
+  "reviewers": ["3846masa"],
+  "labels": ["dependencies"],
+  "semanticCommits": "enabled",
+  "semanticCommitType": "chore",
+  "semanticCommitScope": "deps",
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "semanticCommitScope": "deps-dev"
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    }
+  ]
+}

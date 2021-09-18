@@ -1,11 +1,17 @@
 {
   "name": "@3846masa/bmp",
+  "version": "1.0.1",
   "description": "Create a BMP (w/ alpha channel) binary from RGBA raw bytes like ImageData.",
   "license": "MIT",
   "author": "3846masa <3846masahiro+git@gmail.com>",
   "homepage": "https://github.com/3846masa/bmp#readme",
-  "repository": "git+ssh://git@github.com/3846masa/bmp.git",
-  "version": "1.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/3846masa/bmp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/3846masa/bmp/issues"
+  },
   "main": "lib/convert.cjs",
   "module": "lib/covert.mjs",
   "files": [

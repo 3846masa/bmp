@@ -11,7 +11,7 @@ const workerScript = () => {
   const BMP_RED_BITFIELDS_OFFSET = 54;
   const BMP_GREEN_BITFIELDS_OFFSET = 62;
 
-  const IS_WIN = /Trident|Edge/.test(navigator.userAgent);
+  const IS_WIN = 'navigator' in globalThis && /Trident|Edge/.test(navigator.userAgent);
 
   /**
    * @param {ImageData} imageData

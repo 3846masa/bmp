@@ -5,7 +5,7 @@ const config = [
   {
     input: './src/convert.mjs',
     output: {
-      file: './lib/convert.cjs',
+      file: './lib/convert.js',
       format: 'commonjs',
     },
     plugins: [terser()],

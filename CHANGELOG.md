@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/3846masa/bmp/compare/v1.1.0...v1.1.1) (2021-10-02)
+
+
+### Bug Fixes
+
+* avoid .cjs extension for parcel-bundler ([#16](https://github.com/3846masa/bmp/issues/16)) ([c739c0b](https://github.com/3846masa/bmp/commit/c739c0b53820a1fa99f120b8c72b77776cf7933a))
+
 # [1.1.0](https://github.com/3846masa/bmp/compare/v1.0.2...v1.1.0) (2021-09-18)
 
 

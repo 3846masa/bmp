@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/3846masa/bmp/issues"
   },
-  "main": "lib/convert.cjs",
+  "main": "lib/convert.js",
   "module": "lib/covert.mjs",
   "files": [
     "lib",
@@ -43,7 +43,7 @@
   "esnext": "src/convert.mjs",
   "size-limit": [
     {
-      "path": "lib/convert.cjs",
+      "path": "lib/convert.js",
       "limit": "500 B"
     },
     {

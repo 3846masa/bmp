@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/3846masa/bmp/compare/v1.1.1...v1.1.2) (2021-10-03)
+
+
+### Bug Fixes
+
+* fix module field in package.json ([#17](https://github.com/3846masa/bmp/issues/17)) ([25749eb](https://github.com/3846masa/bmp/commit/25749eb078b9a5280f66fa8b7eb66e2b0cf4feb1))
+
 ## [1.1.1](https://github.com/3846masa/bmp/compare/v1.1.0...v1.1.1) (2021-10-02)
 
 

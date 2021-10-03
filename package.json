@@ -13,7 +13,7 @@
     "url": "https://github.com/3846masa/bmp/issues"
   },
   "main": "lib/convert.js",
-  "module": "lib/covert.mjs",
+  "module": "lib/convert.mjs",
   "files": [
     "lib",
     "src"

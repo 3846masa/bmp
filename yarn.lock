@@ -421,10 +421,10 @@
     lodash "^4.17.4"
     read-pkg-up "^7.0.0"
 
-"@size-limit/file@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-5.0.3.tgz#6b12240f4880e25736534542168ffd064a8e386f"
-  integrity sha512-tkxf5ntFdlZ1xHQAw4fYd+gIkH85S2D3Wb94upJhtOfPHwDsQoQycDFGQRwTgei07Eq5vA8Jj5f2mu/tAdoaXw==
+"@size-limit/file@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@size-limit/file/-/file-6.0.0.tgz#bb8c681f7e1675aa749d0f44d1f835cfb7523b95"
+  integrity sha512-l7SYjIMl1JFi1eQFfDULSutMr10v1FP2cfA/f81y4DTSYx8hCYAN7S95MoQu052pF6tWpDwd8debilZRstlejQ==
   dependencies:
     semver "7.3.5"
 

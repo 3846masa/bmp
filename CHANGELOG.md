@@ -1,3 +1,5 @@
+## [1.1.3](https://github.com/3846masa/bmp/compare/v1.1.2...v1.1.3) (2022-02-27)
+
 ## [1.1.2](https://github.com/3846masa/bmp/compare/v1.1.1...v1.1.2) (2021-10-03)
 
 

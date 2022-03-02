@@ -9,8 +9,13 @@
   "semanticCommitScope": "deps",
   "packageRules": [
     {
+      "matchManagers": ["npm"],
+      "semanticCommitScope": "npm-deps"
+    },
+    {
+      "matchManagers": ["npm"],
       "matchDepTypes": ["devDependencies"],
-      "semanticCommitScope": "deps-dev"
+      "semanticCommitScope": "npm-deps-dev"
     },
     {
       "matchUpdateTypes": ["minor", "patch"],

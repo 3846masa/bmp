@@ -19,7 +19,7 @@
     "src"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js",
+    "build": "rollup -c rollup.config.mjs",
     "size-limit": "size-limit"
   },
   "types": "src/convert.d.ts",

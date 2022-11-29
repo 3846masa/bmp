@@ -25,7 +25,7 @@
   "types": "src/convert.d.ts",
   "dependencies": {},
   "devDependencies": {
-    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/changelog": "6.0.2",
     "@semantic-release/git": "10.0.1",
     "@size-limit/file": "^8.0.0",
     "rollup": "3.5.0",

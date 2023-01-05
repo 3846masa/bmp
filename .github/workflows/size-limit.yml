@@ -7,7 +7,7 @@ jobs:
     name: Size limit
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
       - uses: andresz1/size-limit-action@4135860a4890e227388c4735ece257be61a4c96d # tag=v1.7.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

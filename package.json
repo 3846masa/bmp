@@ -31,7 +31,7 @@
     "rollup": "4.2.0",
     "rollup-plugin-terser": "7.0.2",
     "semantic-release": "22.0.7",
-    "size-limit": "^9.0.0"
+    "size-limit": "^10.0.0"
   },
   "keywords": [
     "bmp",
